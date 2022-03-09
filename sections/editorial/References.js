@@ -1,5 +1,4 @@
 import React from "react";
-import parse from "html-react-parser";
 
 const References = ({ data }) => {
     return (
@@ -11,25 +10,30 @@ const References = ({ data }) => {
               <div className="tb-heading tb-heading-xsm anim-fadeinup">
                 <h3 className="tb-heading-title"><em>References</em></h3>
               </div>
-              {/* End tb-Heading */}
               <div className="text-gray">
                 <ol>
-                    {data.references.map((item, index) => {
-                        <li>
-                            {item.url ?
-                                <a key={index} href={item.url} target="_blank" rel="noopener noreferrer">
-                                    {item.title}
-                                </a>
-                                :
-                                <span key={index}>{item.title}</span>
-                            }
-                        </li>
-                    })}
+                  {data.map((reference, index) => {
+                    if (reference.url) {
+                    return (
+                      <li key={index}>
+                        <a href={reference.url} target="_blank" rel="noopener noreferrer">
+                          {reference.title}
+                        </a>
+                      </li>
+                    )
+                    } else {
+                    return (
+                      <li key={index}>
+                        <span>{reference.title}</span>
+                      </li>
+                    )
+                    }
+                  })}
                 </ol>
               </div>
-            </div> {/* /.tb-col */}
-          </div> {/* /.tb-row */}
-        </div> {/* /.tb-section-inner */}
+            </div> 
+          </div> 
+        </div>
       </div>
     );
 };

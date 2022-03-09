@@ -18,7 +18,11 @@ export default function Editorials(props) {
             <div id="page-content">
             <Post data={props.editorial} />
             <hr />
-            <References data={props.editorial} />
+            {props.editorial.references.length > 0 ?
+            <References data={props.editorial.references} />
+            :
+            null
+            }
             </div>
             
         </>

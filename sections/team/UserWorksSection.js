@@ -20,10 +20,11 @@ const UserWorksSection = ({ data }) => {
                         <div className="pgi-image-holder">
                           <div className="pgi-image-inner anim-zoomin">
                             <figure className="pgi-image ttgr-height">
-                              <img
-                                src={item.cover_image.formats.small.url}
-                                alt={item.cover_image.alternativeText}
-                              />
+                            {item.cover_image.formats.small ?
+                            <img src={item.cover_image.formats.small.url} alt={item.cover_image.alternativeText} />
+                            :
+                            <img src={item.cover_image.url} alt={item.cover_image.alternativeText} />
+                            }
                             </figure>
                           </div>
                         </div>
@@ -39,10 +40,11 @@ const UserWorksSection = ({ data }) => {
                         <div className="pgi-image-holder">
                           <div className="pgi-image-inner anim-zoomin">
                             <figure className="pgi-image ttgr-height">
-                              <img
-                                src={item.cover_image.formats.small.url}
-                                alt={item.cover_image.alternativeText}
-                              />
+                            {item.cover_image.formats.small ?
+                            <img src={item.cover_image.formats.small.url} alt={item.cover_image.alternativeText} />
+                            :
+                            <img src={item.cover_image.url} alt={item.cover_image.alternativeText} />
+                            }
                             </figure>
                           </div>
                         </div>
